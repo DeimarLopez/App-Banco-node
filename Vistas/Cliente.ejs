@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/tablas.css">
+    <link rel="stylesheet" href="">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%=uss%></h1>
+    <div class="tablas">
+    <table>
+        <thead>
+            <tr>
+                <th>Documento</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <th>Celular</th>
+                <th>Sexo</th>
+                <th>fh Naci</th>
+                <th>Actualizar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%
+            datosCl.forEach(datos=>{
+            %>
+            <tr>
+                <td>
+                    <input type="text" class="doc" value="<%=datos.doccli%>">
+                </td>
+                <td>
+                    <input type="text" class="usu" value="<%=datos.nomcli%>">
+                </td>
+                <td>
+                    <input type="text" class="cla" value="<%=datos.apecli%>">
+                </td>
+                <td>
+                    <input type="text" class="rol" value="<%=datos.correocli%>">
+                </td>
+                <td>
+                    <input type="text" class="est" value="<%=datos.celularcli%>">
+                </td>
+                <td>
+                    <input type="text" class="img" value="<%=datos.sexo%>">
+                </td>
+                <td>
+                    <input type="datetime" class="img" value="<%=datos.fechanacicli%>">
+                </td>
+                <td>
+                    <input type="submit" class="img" value="Actualizar">
+                </td>
+                <td>
+                    <input type="submit" class="img" value="Eliminar">
+                </td>
+            </tr>
+            <%
+        });
+            %>
+        </tbody>
+    </table>
+    </div>
+    <section>
+        <form action="insertarClientes" method="POST">
+            <div class="campos__form">
+                <label for="">Documento</label>
+                <input type="text" name="documento">
+            </div>
+            <div class="campos__form">
+                <label for="">Nombre</label>
+                <input type="text" name="nombre">
+            </div>
+            <div class="campos__form">
+                <label for="">Apellido</label>
+                <input type="text" name="apellido">
+            </div>
+            <div class="campos__form">
+                <label for="">Correo</label>
+                <input type="email" name="correo">
+            </div>
+            <div class="campos__form">
+                <label for="">Celular</label>
+                <input type="number" name="celular">
+            </div>
+            <div class="campos__form">
+                <label for="">Sexo</label>
+                <input type="text" pattern="[MF]" maxlength="1" name="sexo">
+            </div>
+            <div class="campos__form">
+                <label for="">FechaNaci</label>
+                <input type="date" name="FechaNaci" >
+            </div>
+            <div class="campos__form">
+                <input type="submit">
+            </div>
+        </form>
+    </section>
+</body>
+</html>
