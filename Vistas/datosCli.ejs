@@ -20,8 +20,8 @@
         </div>
         <nav>
             <ul>
-                <li><a href="/seguridadCli">Seguridad</a></li>
-                <li><a href="/datosCli">Mis Datos</a></li>
+                <li><a href="seguridadCli">Seguridad</a></li>
+                <li><a href="datosCli">Mis Datos</a></li>
                 <li><a href="creditosCli">Mis Credit</a></li>
                 <li><a href="creditosV">Creditos</a></li>
                 <li><a href="transferir">Trasnferir</a></li>
@@ -32,9 +32,16 @@
         </nav>
     </header>
     <main class="container" id="inicio">
-            <article class="saludo">
-                <h1><%=saludo%> <%=uss%> <%=ape%></h1>
-                <h2>En que podemos ayudarte</h2>
+            <article class="formulario">
+                <h1>Datos</h1>
+                <form autocomplete="off" action="/datos" method="POST">
+                    <input type="text" value="<%=uss%>" name="nombre">
+                    <input type="text" value="<%=ape%>" name="apellido">
+                    <input type="email" value="<%=correo%>" name="correo">
+                    <input type="number" value="<%=celular%>" name="celular">
+                    <input type="text" value="<%=genero%>" name="genero" pattern="[MF]" maxlength="1">
+                    <input type="date" value="<%=fechanaci%>" name="fechanaci">
+                    <input type="submit" class="btn" value="Act">
             </article>
     </main>
     <footer class="footer">

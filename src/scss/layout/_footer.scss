@@ -1,0 +1,24 @@
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: $verde;
+    @include tablet{
+        flex-direction: row;
+
+    }
+    .derechos{
+        text-align: center;
+        margin: 2rem;
+        @include tablet{
+            margin: 1rem 2rem;
+        }
+    }
+    p{
+        margin: 2rem;
+        @include tablet{
+            margin: 1rem 2rem;
+        }
+    }
+}

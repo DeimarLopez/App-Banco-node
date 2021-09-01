@@ -23,6 +23,10 @@
 *{
     box-sizing: border-box;
 }
+*::-moz-selection{
+    background-color: var(--gris);
+    color: #ffffff;
+}
 *::selection{
     background-color: var(--gris);
     color: #ffffff;
@@ -78,7 +82,17 @@ body{
     height: 100%;
     width: 7rem;
     margin-left: .3rem;
-    animation: rot 2s infinite alternate;
+    -webkit-animation: rot 2s infinite alternate;
+            animation: rot 2s infinite alternate;
+}
+@-webkit-keyframes rot{
+    0%{
+        transform: translate(0);
+    }
+    100%{
+        transform: translate(5rem);
+        opacity: 0;
+    }
 }
 @keyframes rot{
     0%{
@@ -156,7 +170,9 @@ body{
 }
 @media (min-width: 768px) {
     .contenedor2{
+        display: -ms-grid;
         display: grid;
+        -ms-grid-columns: 2fr 1fr;
         grid-template-columns: 2fr 1fr;
     }   
 }
@@ -182,13 +198,15 @@ body{
     margin-top: 2rem;
     height: 22rem;
     width: 100%;
-    clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0% 100%);
     margin-bottom: 8rem;
 }
 @media (min-width: 768px) {
     .imagen__contenedor2{
         background-position: center right;
-        clip-path: polygon(0 30%, 100% 0, 100% 68%, 0% 100%);
+        -webkit-clip-path: polygon(0 30%, 100% 0, 100% 68%, 0% 100%);
+                clip-path: polygon(0 30%, 100% 0, 100% 68%, 0% 100%);
         height: 98vh;
         margin-bottom: 0;
     }
@@ -336,7 +354,8 @@ body{
     height: 30vh;
     position: relative;
     top: 4.5rem;
-    clip-path: polygon(0 19%, 100% 0%, 100% 83%, 0% 100%);
+    -webkit-clip-path: polygon(0 19%, 100% 0%, 100% 83%, 0% 100%);
+            clip-path: polygon(0 19%, 100% 0%, 100% 83%, 0% 100%);
 }
 @media (min-width: 768px) {
     .imagen__contenedor4{
@@ -401,8 +420,9 @@ body{
 .formlogin a:hover{
   text-decoration: underline;
 }
+s
 .btn{
-    background-color: #ffffffc5 !important;
+    background-color: #244a55be !important;
     color: rgba(0, 0, 0, 0.644) !important;
     font-weight:bold;
     margin-top: 2rem auto 0 auto;
@@ -441,9 +461,23 @@ body{
 .derechos{
     display: flex;
     align-items: center;
-    color: #ffffff;
+    color: #ffffff94;
     font-weight: lighter;
     margin-left: 2rem;
+}
+.saludo{
+    font-size: 4rem;
+    position: relative;
+    bottom: 12rem;
+    text-align: center;
+    color: #244A55 !important;
+}
+.saludo h3{
+    margin-top: 1rem;
+}
+
+.saludo h3:last-child{
+    font-size: 3rem;
 }
 .footer{
     background-color: var(--gris);

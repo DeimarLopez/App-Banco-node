@@ -1,0 +1,45 @@
+.formulario{
+    background-color: $negroTrans;
+    h1{
+        color: $blanco;
+        padding-top: 3rem;
+        font-weight: 100;
+        font-size: 2.9rem;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        padding: 0 5rem;
+        
+        label{
+            color: $blanco;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        input{
+            font-size: 2.3rem;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            background-color: transparent;
+            border: none;
+            border-bottom: .2rem solid $blanco;
+            outline: none;
+            color: $blanco;
+            text-align: center;
+        }
+
+        .btn{
+            color: $negroTrans;
+            background-color: $blancoTrans;
+            cursor: pointer;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            max-width: 5rem;
+
+            &:hover{
+                background-color: $blanco;
+            }
+        }
+    }
+}
