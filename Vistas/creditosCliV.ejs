@@ -32,15 +32,48 @@
         </nav>
     </header>
     <main class="container" id="inicio">
-            <article class="formulario">
-                <h1>Security</h1>
-                <form autocomplete="off" action="/seguridad" method="POST">
-                    <label for="">New User</label>
-                    <input type="text" placeholder="<%=user%>" name="newuser" required>
-                    <label for="">New Password</label>
-                    <input type="password" name="newpass" required>
-                    <input type="submit" class="btn" value="Act">
-                </form>
+            <article class="tabla">
+                <h1>Tus Creditos</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>codigo</th>
+                            <th>documento</th>
+                            <th>linea</th>
+                            <th>Monto</th>
+                            <th>Fh Apro</th>
+                            <th>Plazo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%
+                        datosCre.forEach(datos=>{
+                        %>
+                        <tr>
+                            <td>
+                                <%=datos.codigocredito%>
+                            </td>
+                            <td>
+                                <%=datos.doccli%>
+                            </td>
+                            <td>
+                                <%=datos.codigolinea%>
+                            </td>
+                            <td>
+                                <%=datos.montotoprestado%>
+                            </td>
+                            <td>
+                                <%=datos.fechaaproba%>
+                            </td>
+                            <td>
+                                <%=datos.plazo%>
+                            </td>
+                        </tr>
+                        <%
+                    });
+                        %>
+                    </tbody>
+                </table>
             </article>
     </main>
     <footer class="footer">

@@ -20,9 +20,9 @@
         </div>
         <nav>
             <ul>
-                <li><a href="seguridadCli">Seguridad</a></li>
-                <li><a href="datosCli">Mis Datos</a></li>
-                <li><a href="creditosCli">Mis Credit</a></li>
+                <li><a href="/seguridadCli">Seguridad</a></li>
+                <li><a href="/datosCli">Mis Datos</a></li>
+                <li><a href="/creditosCliV">Mis Credit</a></li>
                 <li><a href="creditosV">Creditos</a></li>
                 <li><a href="transferir">Trasnferir</a></li>
                 <li><a href="consignar">Consignar</a></li>
@@ -35,13 +35,14 @@
             <article class="formulario">
                 <h1>Datos</h1>
                 <form autocomplete="off" action="/datos" method="POST">
-                    <input type="text" value="<%=uss%>" name="nombre">
-                    <input type="text" value="<%=ape%>" name="apellido">
-                    <input type="email" value="<%=correo%>" name="correo">
-                    <input type="number" value="<%=celular%>" name="celular">
-                    <input type="text" value="<%=genero%>" name="genero" pattern="[MF]" maxlength="1">
-                    <input type="date" value="<%=fechanaci%>" name="fechanaci">
+                    <input type="text" value="<%=uss%>" name="nombre" required>
+                    <input type="text" value="<%=ape%>" name="apellido" required>
+                    <input type="email" value="<%=correo%>" name="correo" required>
+                    <input type="number" value="<%=celular%>" name="celular" required>
+                    <input type="text" value="<%=genero%>" name="genero" pattern="[MF]" maxlength="1" required>
+                    <input type="date" value="<%=fechanaci%>" name="fechanaci" required>
                     <input type="submit" class="btn" value="Act">
+                </form>    
             </article>
     </main>
     <footer class="footer">

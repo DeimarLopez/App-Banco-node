@@ -32,15 +32,40 @@
         </nav>
     </header>
     <main class="container" id="inicio">
-            <article class="formulario">
-                <h1>Security</h1>
-                <form autocomplete="off" action="/seguridad" method="POST">
-                    <label for="">New User</label>
-                    <input type="text" placeholder="<%=user%>" name="newuser" required>
-                    <label for="">New Password</label>
-                    <input type="password" name="newpass" required>
-                    <input type="submit" class="btn" value="Act">
-                </form>
+            <article class="tabla">
+                <h1>Creditos Disponibles</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombre</th>
+                            <th>Monto</th>
+                            <th>Plazo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%
+                        datosLi.forEach(datos=>{
+                        %>
+                        <tr>
+                            <td>
+                                <%=datos.codigolinea%>
+                            </td>
+                            <td>
+                                <%=datos.nomlinea%>
+                            </td>
+                            <td>
+                                <%=datos.montomaximocredito%>
+                            </td>
+                            <td>
+                                <%=datos.plazomaxcred%>
+                            </td>
+                        </tr>
+                        <%
+                    });
+                        %>
+                    </tbody>
+                </table>
             </article>
     </main>
     <footer class="footer">

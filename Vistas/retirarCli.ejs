@@ -34,12 +34,11 @@
     <main class="container" id="inicio">
             <article class="formulario">
                 <h1>Security</h1>
-                <form autocomplete="off" action="/seguridad" method="POST">
-                    <label for="">New User</label>
-                    <input type="text" placeholder="<%=user%>" name="newuser" required>
-                    <label for="">New Password</label>
-                    <input type="password" name="newpass" required>
-                    <input type="submit" class="btn" value="Act">
+                <form autocomplete="off" action="/retirar" method="POST">
+                    <label for="">Monto</label>
+                    <input type="number" name="monto" min="0" max="<%=monto-1%>" required>
+                    <p>Fondos: $<%=monto%></p>
+                    <input type="submit" class="btn" value="Env">
                 </form>
             </article>
     </main>

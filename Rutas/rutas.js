@@ -2,6 +2,7 @@ const express = require('express');
 const rutas = express.Router();
 const controller = require('../Controlador/controller');
 const controllerCli = require('../Controlador/controllerCli');
+
 rutas.get('/usuario',controller.consultaUsu);
 rutas.get('/Cliente',controller.consultaCli);
 rutas.get('/Adminmain',controller.admin);
@@ -28,6 +29,14 @@ rutas.get('/seguridadCli',controllerCli.seguridad);
 rutas.post('/seguridad',controllerCli.seguridadnew);
 rutas.get('/datosCli',controllerCli.datos);
 rutas.post('/datos',controllerCli.datosnew);
+rutas.get('/creditosCliV',controllerCli.consultaCreCli);
+rutas.get('/creditosV',controllerCli.consultaLi);
+rutas.get('/consignarCli',controllerCli.consignar);
+rutas.post('/consignar',controllerCli.consignarnew);
+rutas.get('/TransferirCli',controllerCli.trasnferir);
+rutas.post('/transferir',controllerCli.transferirnew);
+rutas.get('/retirarCli',controllerCli.retirar);
+rutas.post('/retirar',controllerCli.retirarnew);
 
 
 module.exports = rutas;

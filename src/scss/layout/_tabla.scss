@@ -1,0 +1,30 @@
+.tabla{
+    max-height: 50rem;
+    min-width: 50rem;
+    overflow:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    table{
+        width: 100%;
+        color: $blanco;
+        text-align: center;
+        background-color: $negroTrans;
+        border-collapse: collapse;
+
+        thead{
+            background-color: $verde;
+            text-transform: uppercase;
+        }
+        th,td{
+            padding: 1.5rem;
+            font-weight: bold;
+        }
+        tr:nth-child(even){
+            background-color: $negroTrans;
+            color: $blanco;
+        }
+    }
+}
