@@ -2,6 +2,7 @@ const express = require('express');
 const rutas = express.Router();
 const controller = require('../Controlador/controller');
 const controllerCli = require('../Controlador/controllerCli');
+const controllerEmple = require('../Controlador/controllerEmple');
 
 rutas.get('/usuario',controller.consultaUsu);
 rutas.get('/Cliente',controller.consultaCli);
@@ -37,6 +38,17 @@ rutas.get('/TransferirCli',controllerCli.trasnferir);
 rutas.post('/transferir',controllerCli.transferirnew);
 rutas.get('/retirarCli',controllerCli.retirar);
 rutas.post('/retirar',controllerCli.retirarnew);
+
+
+/* Empleado */
+rutas.get('/Empleadomain',controllerEmple.Empleado);
+rutas.get('/cuentaEmple',controllerEmple.UssinCuen);
+rutas.post('/cuenta',controllerEmple.cuenta);
+rutas.get('/asigCredEmple',controllerEmple.asicredito);
+rutas.post('/asigcredito',controllerEmple.credito);
+rutas.get('/lineasEmp',controllerEmple.consultaLi);
+rutas.post('/crealinea',controllerEmple.crealinea);
+
 
 
 module.exports = rutas;

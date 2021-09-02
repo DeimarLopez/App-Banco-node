@@ -205,7 +205,7 @@ controller.login = async (req, res, next) => {
                     break;
 
                 case 'Empleado':
-                    res.redirect('Lineas');
+                    res.redirect('Empleadomain');
                     break;
 
                 case 'Administrador':
