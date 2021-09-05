@@ -48,6 +48,9 @@ rutas.get('/asigCredEmple',controllerEmple.asicredito);
 rutas.post('/asigcredito',controllerEmple.credito);
 rutas.get('/lineasEmp',controllerEmple.consultaLi);
 rutas.post('/crealinea',controllerEmple.crealinea);
+rutas.post('/actualizarLi',controllerEmple.actulinea);
+rutas.post('/eliminarLi',controllerEmple.elilinea);
+rutas.get('/datosEmpCli',controllerEmple.insertCli);
 
 
 

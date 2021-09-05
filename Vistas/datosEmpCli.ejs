@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/LOGO-02.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/app.css">
+    <title>Cliente</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a href="/">
+                <div class="logo__header">
+                </div>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/seguridadCli">Seguridad</a></li>
+                <li><a href="/datosCli">Mis Datos</a></li>
+                <li><a href="/creditosCliV">Mis Credit</a></li>
+                <li><a href="creditosV">Creditos</a></li>
+                <li><a href="transferir">Trasnferir</a></li>
+                <li><a href="consignar">Consignar</a></li>
+                <li><a href="retirar">Retirar</a></li>
+                <li><a href="cerrar">Salir</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container" id="inicio">
+            <article class="formulario">
+                <h1 style="margin: 0 auto;">Datos</h1>
+                <form autocomplete="off" action="/insertCli" method="POST">
+                    <input type="text"  name="codigo" required>
+                    <input type="text"  name="nombre" required>
+                    <input type="text" name="apellido" required>
+                    <input type="email" name="correo" required>
+                    <input type="number" name="celular" required>
+                    <input type="text" name="genero" pattern="[MF]" maxlength="1" required>
+                    <input type="date" name="fechanaci" required>
+                    <input type="submit" class="btn" value="Act">
+                </form>    
+            </article>
+    </main>
+    <footer class="footer">
+        <div class="derechos">
+            <p class="name__footer">© 2021 Sanco. Todos los derechos reservados. Sanco es una marca registrada.</p>
+        </div>
+        <p>Usuario <%=rol%></p>
+    </footer>
+</body>
+</html>

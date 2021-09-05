@@ -7,6 +7,8 @@
     <link rel="icon" href="/img/LOGO-02.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@300&display=swap" rel="stylesheet">
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./js/bundle.min.js"></script>
     <link rel="stylesheet" href="/css/app.css">
     <title>Cliente</title>
 </head>
@@ -34,7 +36,7 @@
     <main class="container" id="inicio">
             <article class="tabla">
                 <h1>Creditos Disponibles</h1>
-                <table>
+                <table class="tablaActEli">
                     <thead>
                         <tr>
                             <th>Codigo</th>
@@ -52,21 +54,22 @@
                         <tr>
                             <td>
                                 <%=datos.codigolinea%>
+                                <input type="hidden" class="cod" value="<%=datos.codigolinea%>" disabled="disabled">
                             </td>
                             <td>
-                                <%=datos.nomlinea%>
+                                <input type="text" class="nom" value="<%=datos.nomlinea%>">
                             </td>
                             <td>
-                                <%=datos.montomaximocredito%>
+                                <input type="text" class="monto" value="<%=datos.montomaximocredito%>">
                             </td>
                             <td>
-                                <%=datos.plazomaxcred%>
+                                <input type="text" class="plazo" value="<%=datos.plazomaxcred%>">
                             </td>
                             <td>
-                                <input type="submit" class="btnact" value="Actualizar">
+                                <input type="submit" class="btnactli" value="Actualizar">
                             </td>
                             <td>
-                                <input type="submit" class="btnact" value="Eliminar">
+                                <input type="submit" class="btnelili" value="Eliminar">
                             </td>
                         </tr>
                         <%
@@ -78,7 +81,7 @@
             <article class="formulario mr">
                 <h1>Crear Cuenta</h1>
                 <form autocomplete="off" action="/crealinea" method="POST">
-                    <input type="number" placeholder="Codigo" name="codigo">
+                    <input type="number" placeholder="codigo" name="codigo">
                     <input type="text" name="nombre" placeholder="nombre">
                     <input type="number" name="monto" min="0" placeholder="Monto">
                     <input type="number" name="plazo" min="0" placeholder="Meses Plazo">

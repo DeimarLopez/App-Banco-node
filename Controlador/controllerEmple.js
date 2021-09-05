@@ -109,6 +109,48 @@ controllerEmple.crealinea = (req, res, next) => {
     );
 }
 
+controllerEmple.actulinea = (req, res, next) => {
+    
+    const codigo = req.body.do;
+    const nombre = req.body.no;
+    const monto = req.body.mo;
+    const plazo = req.body.pl;
+
+
+    cnn.query(`UPDATE tb_lineas SET nomlinea = '${nombre}', montomaximocredito = '${monto}', plazomaxcre = '${plazo}' WHERE (codigolinea = '${codigo}');`,
+        (err, resbd) => {
+            if (err) {
+                next(new Error(err));
+            }
+            else {
+                res.redirect('/lineasEmp');
+            }
+        }
+    );  
+}
+
+controllerEmple.elilinea = (req, res, next) => {
+    
+    const codigo = req.body.do;
+
+    cnn.query(`DELETE FROM tb_lineas WHERE (codigolinea = '${codigo}');`,
+        (err, resbd) => {
+            if (err) {
+                next(new Error(err));
+            }
+            else {
+                res.redirect('/lineasEmp');
+            }
+        }
+    );  
+}
+
+controllerEmple.insertCli = (req, res, next) => {
+    console.log('En la vista de datosEmpCli');
+    res.render('datosEmpCli');
+    res.redirect('datosEmpCli');
+}
+
 function fecha(dato) {
     let fech = dato.toLocaleDateString();
     let fechas = fech.split('/').reverse();
