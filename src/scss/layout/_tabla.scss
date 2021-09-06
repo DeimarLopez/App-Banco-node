@@ -36,18 +36,34 @@
         max-width: 10rem;
         font-size: 1.8rem;
     }
-    .btnactli,
-    .btnelili{
+    .btnA,
+    .btnE{
         border: none;
         padding: .5rem .3rem;
         &:hover{
             cursor: pointer;
         }
     }
-    .btnactli{
+    .btnA{
         background-color: $lima;
     }
-    .btnelili{
+    .btnE{
         background-color: $berme;
+    }
+}
+.tablaActEli__w100{
+    .fecha{
+        max-width: 16rem;
+    } 
+    .genero{
+        max-width: 4rem;
+    }
+}
+.grid{
+    @include tablet{
+        margin: 0 auto;
+        max-width: 98%;
+        display: grid;
+        grid-template-columns: 1fr 35rem;
     }
 }

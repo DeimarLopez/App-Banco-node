@@ -22,53 +22,54 @@
         </div>
         <nav>
             <ul>
-                <li><a href="/cuentaEmple">Crear Cuentas</a></li>
-                <li><a href="/asigCredEmple">Asig Credito</a></li>
-                <li><a href="/lineasEmp">Lineas Credito</a></li>
-                <li><a href="/datosEmpCli">Reg Cliente</a></li>
-                <li><a href="/clientesEmp">Cliente</a></li>
-                <li><a href="/creditosEmp">Creditos</a></li>
+                <li><a href="/Administradormain">Main</a></li>
                 <li><a href="cerrar">Salir</a></li>
             </ul>
         </nav>
     </header>
-    <main class="container" id="inicio">
+    <main class="container grid" id="inicio">
             <article class="tabla">
-                <h1>Creditos Disponibles</h1>
                 <table class="tablaActEli">
                     <thead>
                         <tr>
-                            <th>Codigo</th>
-                            <th>Nombre</th>
-                            <th>Monto</th>
-                            <th>Plazo</th>
+                            <th>Documento</th>
+                            <th>Usuario</th>
+                            <th>clave</th>
+                            <th>Rol</th>
+                            <th>Estado</th>
+                            <th>Imagen</th>
                             <th>Actualizar</th>
                             <th>Eliminar</th>
                         </tr>
                     </thead>
                     <tbody>
                         <%
-                        datosLi.forEach(datos=>{
+                        datosUs.forEach(datos=>{
                         %>
                         <tr>
                             <td>
-                                <%=datos.codigolinea%>
-                                <input type="hidden" class="cod" value="<%=datos.codigolinea%>" disabled="disabled">
+                                <input type="text" class="doc" value="<%=datos.doccli%>">
                             </td>
                             <td>
-                                <input type="text" class="nom" value="<%=datos.nomlinea%>">
+                                <input type="text" class="usu" value="<%=datos.nomusu%>">
                             </td>
                             <td>
-                                <input type="text" class="monto" value="<%=datos.montomaximocredito%>">
+                                <input type="text" class="cla" value="<%=datos.clave%>">
                             </td>
                             <td>
-                                <input type="text" class="plazo" value="<%=datos.plazomaxcred%>">
+                                <input type="text" class="rol" value="<%=datos.rol%>">
                             </td>
                             <td>
-                                <input type="submit" class="btnactli btnA" value="Actualizar">
+                                <input type="text" class="est" value="<%=datos.estado%>">
                             </td>
                             <td>
-                                <input type="submit" class="btnelili btnE" value="Eliminar">
+                                <input type="text" class="img" value="<%=datos.imagen%>">
+                            </td>
+                            <td>
+                                <input type="submit" id="btnact" class="btnact btnA" value="Actualizar">
+                            </td>
+                            <td>
+                                <input type="submit" class="btneli btnE" value="Eliminar">
                             </td>
                         </tr>
                         <%
@@ -79,11 +80,20 @@
             </article>
             <article class="formulario mr">
                 <h1>Crear Cuenta</h1>
-                <form autocomplete="off" action="/crealinea" method="POST">
-                    <input type="number" placeholder="codigo" name="codigo">
-                    <input type="text" name="nombre" placeholder="nombre">
-                    <input type="number" name="monto" min="0" placeholder="Monto">
-                    <input type="number" name="plazo" min="0" placeholder="Meses Plazo">
+                <form autocomplete="off" action="/crearUsuario" method="POST">
+                    <input type="number" placeholder="Cedula" name="documento">
+                    <input type="text" placeholder="User" name="usuario">
+                    <input type="password" name="clave" placeholder="clave">
+                    <select name="rol">
+                        <option value="Cliente">Cliente</option>
+                        <option value="Empleado">Empleado</option>
+                        <option value="Administrador">Administrador</option>
+                    </select>
+                    <select name="estado">
+                        <option value="Activo">Activo</option>
+                        <option value="Inactivo">Inactivo</option>
+                    </select>
+                    <input type="text" name="imagen" value="Imagen">
                     <input type="submit" class="btn" value="Asg">
                 </form>
             </article>

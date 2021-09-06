@@ -34,41 +34,52 @@
     </header>
     <main class="container" id="inicio">
             <article class="tabla">
-                <h1>Creditos Disponibles</h1>
-                <table class="tablaActEli">
+                <h1>Clientes</h1>
+                <table class="tablaActEli tablaActEli__w100">
                     <thead>
                         <tr>
-                            <th>Codigo</th>
+                            <th>Documento</th>
                             <th>Nombre</th>
-                            <th>Monto</th>
-                            <th>Plazo</th>
+                            <th>Apellido</th>
+                            <th>Correo</th>
+                            <th>Celular</th>
+                            <th>Sexo</th>
+                            <th>fh Naci</th>
                             <th>Actualizar</th>
                             <th>Eliminar</th>
                         </tr>
                     </thead>
                     <tbody>
                         <%
-                        datosLi.forEach(datos=>{
+                        datosCli.forEach(datos=>{
                         %>
                         <tr>
                             <td>
-                                <%=datos.codigolinea%>
-                                <input type="hidden" class="cod" value="<%=datos.codigolinea%>" disabled="disabled">
+                                <input type="text" class="doc" value="<%=datos.doccli%>">
                             </td>
                             <td>
-                                <input type="text" class="nom" value="<%=datos.nomlinea%>">
+                                <input type="text" class="nom" value="<%=datos.nomcli%>">
                             </td>
                             <td>
-                                <input type="text" class="monto" value="<%=datos.montomaximocredito%>">
+                                <input type="text" class="ape" value="<%=datos.apecli%>">
                             </td>
                             <td>
-                                <input type="text" class="plazo" value="<%=datos.plazomaxcred%>">
+                                <input type="text" class="email" value="<%=datos.correocli%>">
                             </td>
                             <td>
-                                <input type="submit" class="btnactli btnA" value="Actualizar">
+                                <input type="text" class="cel" value="<%=datos.celularcli%>">
                             </td>
                             <td>
-                                <input type="submit" class="btnelili btnE" value="Eliminar">
+                                <input type="text" class="genero" value="<%=datos.sexo%>">
+                            </td>
+                            <td>
+                                <input type="date" class="fecha" value="<%=datos.fechanacicli%>">
+                            </td>
+                            <td>
+                                <input type="submit" class="btnActCli btnA" value="Actualiza">
+                            </td>
+                            <td>
+                                <input type="submit" class="btnEliCli btnE" value="Eliminar">
                             </td>
                         </tr>
                         <%
@@ -76,16 +87,6 @@
                         %>
                     </tbody>
                 </table>
-            </article>
-            <article class="formulario mr">
-                <h1>Crear Cuenta</h1>
-                <form autocomplete="off" action="/crealinea" method="POST">
-                    <input type="number" placeholder="codigo" name="codigo">
-                    <input type="text" name="nombre" placeholder="nombre">
-                    <input type="number" name="monto" min="0" placeholder="Monto">
-                    <input type="number" name="plazo" min="0" placeholder="Meses Plazo">
-                    <input type="submit" class="btn" value="Asg">
-                </form>
             </article>
     </main>
     <footer class="footer">

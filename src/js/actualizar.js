@@ -17,7 +17,7 @@ $(document).ready(function(){
         alert(d,u,c);
         $.ajax({
             type:"POST",
-            url:'/actualizar',
+            url:'/actualizarUsu',
             data:{
                 do:d,
                 us:u,

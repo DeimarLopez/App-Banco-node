@@ -17,7 +17,7 @@ $(document).ready(function(){
         alert(d);
         $.ajax({
             type:"POST",
-            url:'/eliminar',
+            url:'/eliminarUsu',
             data:{
                 do:d,
                 us:u,

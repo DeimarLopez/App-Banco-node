@@ -29,10 +29,10 @@ ul{
     box-sizing: border-box;
 }
 *::-moz-selection{
-    background-color: var(--gris);
+    background-color: $verde;
     color: #ffffff;
 }
 *::selection{
-    background-color: var(--gris);
+    background-color: $verde;
     color: #ffffff;
 }

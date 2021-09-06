@@ -20,13 +20,12 @@
         </div>
         <nav>
             <ul>
-                <li><a href="/seguridadCli">Seguridad</a></li>
-                <li><a href="/datosCli">Mis Datos</a></li>
-                <li><a href="/creditosCliV">Mis Credit</a></li>
-                <li><a href="creditosV">Creditos</a></li>
-                <li><a href="transferir">Trasnferir</a></li>
-                <li><a href="consignar">Consignar</a></li>
-                <li><a href="retirar">Retirar</a></li>
+                <li><a href="/cuentaEmple">Crear Cuentas</a></li>
+                <li><a href="/asigCredEmple">Asig Credito</a></li>
+                <li><a href="/lineasEmp">Lineas Credito</a></li>
+                <li><a href="/datosEmpCli">Reg Cliente</a></li>
+                <li><a href="/clientesEmp">Cliente</a></li>
+                <li><a href="/creditosEmp">Creditos</a></li>
                 <li><a href="cerrar">Salir</a></li>
             </ul>
         </nav>
@@ -35,12 +34,12 @@
             <article class="formulario">
                 <h1 style="margin: 0 auto;">Datos</h1>
                 <form autocomplete="off" action="/insertCli" method="POST">
-                    <input type="text"  name="codigo" required>
-                    <input type="text"  name="nombre" required>
-                    <input type="text" name="apellido" required>
-                    <input type="email" name="correo" required>
-                    <input type="number" name="celular" required>
-                    <input type="text" name="genero" pattern="[MF]" maxlength="1" required>
+                    <input type="text"  name="codigo" placeholder="Cedula" required>
+                    <input type="text"  name="nombre" placeholder="Nombre" required>
+                    <input type="text" name="apellido" placeholder="Apellido" required>
+                    <input type="email" name="correo" placeholder="teem@gmail.com" required>
+                    <input type="number" name="celular" placeholder="321123212" required>
+                    <input type="text" name="genero" pattern="[MF]" placeholder="Genero" maxlength="1" required>
                     <input type="date" name="fechanaci" required>
                     <input type="submit" class="btn" value="Act">
                 </form>    

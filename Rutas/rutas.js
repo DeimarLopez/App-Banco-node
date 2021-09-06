@@ -3,26 +3,13 @@ const rutas = express.Router();
 const controller = require('../Controlador/controller');
 const controllerCli = require('../Controlador/controllerCli');
 const controllerEmple = require('../Controlador/controllerEmple');
-
-rutas.get('/usuario',controller.consultaUsu);
-rutas.get('/Cliente',controller.consultaCli);
-rutas.get('/Adminmain',controller.admin);
-rutas.get('/lineas',controller.consultaLi); 
-rutas.get('/clientes',controller.consultaCli); 
-rutas.get('/creditos',controller.consultaCre);
-rutas.get('/cerrar',controller.cerrar),
-/* rutas.get('/',controller.consultaCre); */
-/* rutas.post('/insertLineas',controller.insertarLineas); */
-/* rutas.post('/insertarClientes',controller.insertarClientes); */
-rutas.post('/frminsertar',controller.insertar);
-rutas.post('/actualizar',controller.actualizar);
-rutas.post('/eliminar',controller.eliminar);
-/* rutas.post('/insertarCreditos',controller.insertarCreditos) */
+const controllerAdmin = require('../Controlador/controllerAdmin');
 
 
 /* Login */
 rutas.get('/', controller.index);
 rutas.post('/login',controller.login);
+rutas.get('/cerrar',controller.cerrar),
 
 /* Cliente  */
 rutas.get('/Clientemain',controllerCli.cliente);
@@ -51,7 +38,19 @@ rutas.post('/crealinea',controllerEmple.crealinea);
 rutas.post('/actualizarLi',controllerEmple.actulinea);
 rutas.post('/eliminarLi',controllerEmple.elilinea);
 rutas.get('/datosEmpCli',controllerEmple.insertCli);
+rutas.post('/insertCli',controllerEmple.insertClinew);
+rutas.get('/clientesEmp',controllerEmple.consultaCli);
+rutas.post('/actualizarCli',controllerEmple.actuaCli);
+rutas.post('/eliminarCli',controllerEmple.eliminarCli);
+rutas.get('/creditosEmp',controllerEmple.consultaCre);
+rutas.post('/actualizarCre',controllerEmple.actuaCre);
+rutas.post('/eliminarCre',controllerEmple.eliminarCre);
 
-
+/* Administrador */
+rutas.get('/Administradormain',controllerAdmin.consultaUsu);
+rutas.get('/usuariosAdm',controllerAdmin.consultaUsu);
+rutas.post('/crearUsuario',controllerAdmin.insertar);
+rutas.post('/actualizarUsu',controllerAdmin.actualizar);
+rutas.post('/eliminarUsu',controllerAdmin.eliminar);
 
 module.exports = rutas;

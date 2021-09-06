@@ -34,13 +34,15 @@
     </header>
     <main class="container" id="inicio">
             <article class="tabla">
-                <h1>Creditos Disponibles</h1>
-                <table class="tablaActEli">
+                <h1>Creditos</h1>
+                <table class="tablaActEli tablaActEli__w100">
                     <thead>
                         <tr>
-                            <th>Codigo</th>
-                            <th>Nombre</th>
+                            <th>codigo</th>
+                            <th>documento</th>
+                            <th>linea</th>
                             <th>Monto</th>
+                            <th>Fh Apro</th>
                             <th>Plazo</th>
                             <th>Actualizar</th>
                             <th>Eliminar</th>
@@ -48,27 +50,32 @@
                     </thead>
                     <tbody>
                         <%
-                        datosLi.forEach(datos=>{
+                        datosCre.forEach(datos=>{
                         %>
                         <tr>
                             <td>
-                                <%=datos.codigolinea%>
-                                <input type="hidden" class="cod" value="<%=datos.codigolinea%>" disabled="disabled">
+                                <input type="text" class="cod" name="cod" value="<%=datos.codigocredito%>">
                             </td>
                             <td>
-                                <input type="text" class="nom" value="<%=datos.nomlinea%>">
+                                <input type="text" class="doc" name="doc" value=" <%=datos.doccli%>">
                             </td>
                             <td>
-                                <input type="text" class="monto" value="<%=datos.montomaximocredito%>">
+                                <input type="text" class="codL" name="codL" value="<%=datos.codigolinea%>">                             
                             </td>
                             <td>
-                                <input type="text" class="plazo" value="<%=datos.plazomaxcred%>">
+                                <input type="text" class="mon" name="mon" value="<%=datos.montotoprestado%>">                 
                             </td>
                             <td>
-                                <input type="submit" class="btnactli btnA" value="Actualizar">
+                                <input type="date" class="fecha" name="fecha" value="<%=datos.fechaaproba%>">                               
                             </td>
                             <td>
-                                <input type="submit" class="btnelili btnE" value="Eliminar">
+                                <input type="text" class="plazo" name="plazo" value="<%=datos.plazo%>">
+                            </td>
+                            <td>
+                                <input type="submit" class="btnActCre btnA" value="Actualiza">
+                            </td>
+                            <td>
+                                <input type="submit" class="btnEliCre btnE" value="Eliminar">
                             </td>
                         </tr>
                         <%
@@ -76,16 +83,6 @@
                         %>
                     </tbody>
                 </table>
-            </article>
-            <article class="formulario mr">
-                <h1>Crear Cuenta</h1>
-                <form autocomplete="off" action="/crealinea" method="POST">
-                    <input type="number" placeholder="codigo" name="codigo">
-                    <input type="text" name="nombre" placeholder="nombre">
-                    <input type="number" name="monto" min="0" placeholder="Monto">
-                    <input type="number" name="plazo" min="0" placeholder="Meses Plazo">
-                    <input type="submit" class="btn" value="Asg">
-                </form>
             </article>
     </main>
     <footer class="footer">
