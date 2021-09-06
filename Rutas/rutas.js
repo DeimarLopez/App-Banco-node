@@ -47,7 +47,7 @@ rutas.post('/actualizarCre',controllerEmple.actuaCre);
 rutas.post('/eliminarCre',controllerEmple.eliminarCre);
 
 /* Administrador */
-rutas.get('/Administradormain',controllerAdmin.consultaUsu);
+rutas.get('/Administradormain',controllerAdmin.administrador);
 rutas.get('/usuariosAdm',controllerAdmin.consultaUsu);
 rutas.post('/crearUsuario',controllerAdmin.insertar);
 rutas.post('/actualizarUsu',controllerAdmin.actualizar);

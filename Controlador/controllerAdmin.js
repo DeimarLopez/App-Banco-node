@@ -7,9 +7,13 @@ const controllerAdmin = {};
 
 
 controllerAdmin.administrador = (req, res, next) => {
-    console.log('En la vista de Administrador');
-    res.render('Administradormain');
-    res.redirect('Administradormain');
+    if (req.session.login) {
+        console.log('En la vista de Administrador');
+        res.render('Administradormain');
+        res.redirect('Administradormain');
+    } else {
+        res.redirect('/');
+    }
 }
 
 controllerAdmin.consultaUsu = (req, res, next) => {
@@ -19,44 +23,47 @@ controllerAdmin.consultaUsu = (req, res, next) => {
             if (err) {
                 next(new Error(err));
             } else {
-                console.log(resbd);
                 res.render('usuariosAdm', { datosUs: resbd });
             }
         })
     } else {
-        res.redirect('/usuariosAdm');
+        res.redirect('/');
     }
 }
 
 
 
 controllerAdmin.insertar = async (req, res, next) => {
-    const documento = req.body.documento;
-    const usuario = req.body.usuario;
-    const clave = req.body.clave;
-    const rol = req.body.rol;
-    const estado = req.body.estado;
-    const imagen = req.body.imagen;
-    const pass = await bcryptjs.hash(clave, 8);
-    cnn.query('INSERT INTO tb_usuarios SET?',
-        {
-            doccli: documento,
-            nomusu: usuario,
-            clave: pass,
-            rol: rol,
-            estado: estado,
-            imagen: imagen
-        },
-        (err, resbd) => {
-            if (err) {
-                next(new Error(err));
+    if (req.session.login) {
+        const documento = req.body.documento;
+        const usuario = req.body.usuario;
+        const clave = req.body.clave;
+        const rol = req.body.rol;
+        const estado = req.body.estado;
+        const imagen = req.body.imagen;
+        const pass = await bcryptjs.hash(clave, 8);
+        cnn.query('INSERT INTO tb_usuarios SET?',
+            {
+                doccli: documento,
+                nomusu: usuario,
+                clave: pass,
+                rol: rol,
+                estado: estado,
+                imagen: imagen
+            },
+            (err, resbd) => {
+                if (err) {
+                    next(new Error(err));
+                }
+                else {
+                    console.log(resbd);
+                    res.redirect('/usuariosAdm');
+                }
             }
-            else {
-                console.log(resbd);
-                res.redirect('/usuariosAdm');
-            }
-        }
-    );
+        );
+    } else {
+        res.redirect('/');
+    }
 }
 
 
